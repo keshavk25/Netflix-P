@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "netflix-kk",
+    "default": "netflix-pro-1",
     "build": "netflix-pro-1"
   },
   "targets": {},
