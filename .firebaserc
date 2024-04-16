@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "netflix-pro-1",
-    "build": "netflix-pro-1"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "netfli2clone"
+  }
 }
