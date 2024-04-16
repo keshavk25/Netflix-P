@@ -4,13 +4,14 @@ import { useDispatch} from "react-redux";
 import { addTrailerVideo } from "../utils/movieSlice";
 
 
-const useMoviesTrailer = ()=>{
+const useMoviesTrailer = (moviesId)=>{
 
     const dispatch = useDispatch();
+    console.log(moviesId)
   
     const backgroundVideo = async () => {
       const data = await fetch(
-        "https://api.themoviedb.org/3/movie/693134/videos",
+        "https://api.themoviedb.org/3/movie/"+ moviesId +"/videos",
         API_OPTIONS
       );
       const jsonData = await data.json();

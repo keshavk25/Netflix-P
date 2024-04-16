@@ -3,7 +3,7 @@ const BackgroundVideoTitle =  (props)=>{
     const {videoTitle,overview}= props;
 
     return (
-        <div className="absolute top-80 left-16 text-white ">
+        <div className="absolute w-screen aspect-video top-80 left-16 text-white ">
             <h1 className="text-4xl font-bold my-4">{videoTitle}</h1>
             <p className="my-4 w-5/12">{overview}</p>
             <div className="my-4 flex flex-nowrap">

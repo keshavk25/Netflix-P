@@ -9,10 +9,10 @@ const MainContainer =  ()=>{
 
     // console.log(moviesList[1])
     const {title,overview,id} = moviesList[1];
-    // console.log(title,overview,id)
+    console.log(id)
 
     return (
-        <div className="bg-gradient-to-r from-black">
+        <div >
             <BackgroundVideo moviesId={id}/>
             <BackgroundVideoTitle videoTitle={title} overview={overview}/>
         </div>
