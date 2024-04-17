@@ -7,9 +7,7 @@ const MainContainer =  ()=>{
     const moviesList= useSelector(store=>store.movies?.nowPlayingMovies)
     if(moviesList== null)return;
 
-    // console.log(moviesList[1])
     const {title,overview,id} = moviesList[1];
-    console.log(id)
 
     return (
         <div >

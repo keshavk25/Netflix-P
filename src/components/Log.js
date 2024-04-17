@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { user_AVATAR } from "../utils/constant";
+import { bg_URL } from "../utils/constant";
 
 const Log = ()=>{
     const dispatch = useDispatch();
@@ -45,7 +46,6 @@ const Log = ()=>{
                 navigate("/browse")
               }).catch((error) => {
               });
-            console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -57,7 +57,6 @@ const Log = ()=>{
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user)
                     navigate("/browse")
                 })
                 .catch((error) => {
@@ -74,7 +73,7 @@ const Log = ()=>{
         <div className="absolute top-0 bg-gradient-to-b from-black">
             <Header />
             <div className="">
-            <img src="https://assets.nflxext.com/ffe/siteui/vlv3/c1366fb4-3292-4428-9639-b73f25539794/3417bf9a-0323-4480-84ee-e1cb2ff0966b/IN-en-20240408-popsignuptwoweeks-perspective_alpha_website_large.jpg" 
+            <img src={bg_URL}
             alt="" 
             className="w-full h-full"
             />
