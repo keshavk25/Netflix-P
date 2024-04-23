@@ -1,8 +1,10 @@
+import { Movie_Poster_URL } from "../utils/constant";
+
 const MoviesCard = ({moviesPath})=>{
 
     return (
         <div className="w-48 mx-1">
-            <img src={"https://image.tmdb.org/t/p/w500/"+moviesPath}
+            <img src={Movie_Poster_URL+moviesPath}
             className="w-48 h-72"
             alt="" />
         </div>

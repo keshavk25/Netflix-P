@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constant";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constant";
 import { toggleGptSearch } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configLangSlice";
 
@@ -63,7 +63,7 @@ const Header = () => {
       {user && (
         <>
           <div className="flex justify-center items-center mr-6">
-            <div className="flex justify-center items-center">
+            {showGptSearch && <div className="flex justify-center items-center">
               <p className="text-white text-3xl mb-1">🌐</p>
               <select
                 name=""
@@ -71,14 +71,11 @@ const Header = () => {
                 className="text-sm h-8 rounded"
                 onChange={handleLang}
               >
-                <option value="en">English</option>
-                <option value="hindi">Hindi</option>
-                <option value="japanese">Japanese</option>
-                <option value="korean">Korean</option>
+                {SUPPORTED_LANGUAGES.map((lang)=><option value={lang.identifier} key={lang.identifier} >{lang.name}</option>)}
               </select>
-            </div>
+            </div>}
             <button
-              className="bg-green-600 text-white p-1 mx-6 rounded"
+              className="bg-green-600 text-white p-1 px-2 mx-6 rounded"
               onClick={handleOnClick}
             >
               {showGptSearch ? "Home Page" : "GPT Search"}

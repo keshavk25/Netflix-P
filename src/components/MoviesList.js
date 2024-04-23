@@ -8,7 +8,7 @@ const MoviesList = ({ title, movies }) => {
         <div className="flex ml-12 ">
           {movies &&
             movies.map((movie) => (
-              <MoviesCard moviesPath={movie?.poster_path} />
+              <MoviesCard key={movie?.poster_path} moviesPath={movie?.poster_path} />
             ))}
         </div>
       </div>
