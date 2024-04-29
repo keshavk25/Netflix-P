@@ -7,13 +7,13 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constant";
-import { toggleGptSearch } from "../utils/gptSlice";
+import { toggleSearch } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configLangSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  const showSearch = useSelector((store) => store.search.searchMovieResult);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -48,7 +48,7 @@ const Header = () => {
   }, []);
 
   const handleOnClick = () => {
-    dispatch(toggleGptSearch());
+    dispatch(toggleSearch());
   };
   const handleLang = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -63,7 +63,7 @@ const Header = () => {
       {user && (
         <>
           <div className="flex justify-center items-center mr-6">
-            {showGptSearch && <div className="flex justify-center items-center">
+            {showSearch && <div className="flex justify-center items-center">
               <p className="text-white text-3xl mb-1">🌐</p>
               <select
                 name=""
@@ -78,7 +78,7 @@ const Header = () => {
               className="bg-green-600 text-white p-1 px-2 mx-6 rounded"
               onClick={handleOnClick}
             >
-              {showGptSearch ? "Home Page" : "GPT Search"}
+              {showSearch ? "Home Page" : "Search"}
             </button>
             <img
               src={user?.photoURL}

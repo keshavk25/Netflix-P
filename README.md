@@ -34,7 +34,7 @@
       - title & description 
       - movieSuggestions
           - movieLists *N
-- NetflixGPT 
+- Netflix
 
 
 

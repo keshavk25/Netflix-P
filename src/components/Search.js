@@ -1,16 +1,16 @@
-import GptSearchBar from "./GptSearchBar";
+import SearchBar from "./SearchBar";
 import { bg_URL } from "../utils/constant";
 
-const GptSearch = ()=>{
+const Search = ()=>{
     return(
         <>
         <img src={bg_URL}
             alt="background_image" 
             className="w-full h-full"
             />
-          <GptSearchBar/>  
+          <SearchBar/>  
         </>
     )
 }
 
-export default GptSearch;
+export default Search;
