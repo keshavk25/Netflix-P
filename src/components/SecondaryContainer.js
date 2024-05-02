@@ -13,9 +13,10 @@ const SecondaryContainer =  ()=>{
     useUpcomingMovies();
 
     return (
+        
         movies?.nowPlayingMovies &&(
             <div className="bg-black">
-        <div className="-mt-56">
+        <div className="-mt-8 md:-mt-72">
         <MoviesList title="Now Playing" movies={movies?.nowPlayingMovies}/>
         <MoviesList title="Top Rated" movies={movies?.topRatedMovies?.results}/>
         <MoviesList title="Popular" movies={movies?.popularMovies?.results}/>

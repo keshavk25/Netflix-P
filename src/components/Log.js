@@ -70,43 +70,45 @@ const Log = ()=>{
     }
 
     return(
-        <div className="absolute top-0 bg-gradient-to-b from-black">
+        <div>
             <Header />
-            <div className="">
+            <div>
             <img src={bg_URL}
             alt="" 
-            className="w-full h-full"
+            className="h-screen object-cover  md:w-full md:h-full"
             />
             </div>
+            <div className="absolute top-20">
             <form 
             onSubmit={(e)=>e.preventDefault()}
-            className=" absolute top-0 left-0 my-24 ml-[535px] bg-black h-3/5 w-[450px] text-white bg-opacity-85 rounded-md">
-                <h2 className="text-3xl mt-12 font-bold my-4 mx-16">
+            className="w-[95%] mx-1 p-4 md:w-3/12 my-20 md:ml-[40%] bg-black text-white bg-opacity-85 rounded-md flex flex-wrap">
+                <h2 className="text-3xl font-bold my-4 mx-4">
                      {isSignIn?"Sign In" : "Sign Up"}
                      </h2>
                 {!isSignIn&&
                 <input type="text" placeholder="Full Name" 
                 ref={fullname}
-                className=" m-2 mx-16 p-4 w-80 h-14 bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md"
+                className=" m-2 p-2 w-80 h-14 bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md"
                 />}
                 <input type="text" placeholder="E-Mail" 
                 ref={email}
-                className="m-2 mx-16 p-4 w-80 h-14 bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md" 
+                className="m-2 p-2 w-80 h-14 bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md" 
                 />
                 <input type="text" placeholder="Password"
                 ref={password} 
-                className="m-2 mx-16 p-4 w-80 h-14  bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md"
+                className="m-2 p-2 w-80 h-14  bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md"
                  />
-                 <p className="text-red-700 ml-16">{validateErrMessage}</p>
-                <button className=" m-2 bg-red-600 p-2 mx-16 w-80 h-10 rounded-md "
+                 <p className="text-red-700 ml-4">{validateErrMessage}</p>
+                <button className=" m-2 bg-red-600 p-2 w-80 h-10 rounded-md "
                 onClick={validateOnClick}
                 >
                 {isSignIn?"Sign In" : "Sign Up"}
                 </button>
                 <p 
-                className="text-lg my-8 mx-16 cursor-pointer"
+                className="text-lg my-4 mx-2 cursor-pointer"
                 onClick={handleSignButton}> {isSignIn?"New to Netflix? Sign Up now." : "Already registed? Sign In now"} </p>
             </form>
+            </div>
             </div>
     )
 }
