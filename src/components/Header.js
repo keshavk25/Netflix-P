@@ -2,18 +2,20 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constant";
 import { toggleSearch } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configLangSlice";
+import lang from "../utils/languageConstant";
 
 const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const showSearch = useSelector((store) => store.search.showSearch);
+  const langKey = useSelector((store) => store?.configLang?.lang);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -52,6 +54,7 @@ const Header = () => {
   };
   const handleLang = (e) => {
     dispatch(changeLanguage(e.target.value));
+
   };
 
   return (
@@ -68,7 +71,7 @@ const Header = () => {
               className="flex bg-green-600 text-white p-1 px-2 m-2 rounded"
               onClick={handleOnClick}
             >
-              {showSearch ? "Home Page" : "Search"}
+              {showSearch ? (lang[langKey]?.homePage): (lang[langKey]?.search)}
             </button>
 
             {showSearch && <div className="flex justify-center items-center m-2">
@@ -91,7 +94,7 @@ const Header = () => {
               className="flex m-2 font-medium  text-lg px-1 rounded text-red-600 bg-white "
               onClick={handleClick}
             >
-              Log Out
+              {lang[langKey]?.logOut}
             </button>
             
           </div>

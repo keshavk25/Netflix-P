@@ -1,6 +1,5 @@
 import SearchBar from "./SearchBar";
 import { bg_URL } from "../utils/constant";
-import Footer from "./Footer";
 
 const Search = ()=>{
     return(

@@ -8,6 +8,7 @@ import SearchMovieResult from "./SearchMovieResult";
 const SearchBar = () => {
   const searchText = useRef("");
   const langKey = useSelector((store) => store.configLang.lang);
+  const userSearchMovie = useSelector((store) => store?.search);
   const dispatch = useDispatch();
 
   const handleOnClick = async () => {
@@ -43,9 +44,8 @@ const SearchBar = () => {
             {lang[langKey].search}
           </button>
         </form>
-
+        
         {searchText.current.value && <SearchMovieResult/> }
-
       </div>
     </div>
   );

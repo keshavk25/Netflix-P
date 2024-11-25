@@ -7,8 +7,6 @@ import Error from "./Error";
 
 const Body = ()=>{
 
-    
-
     const appRouter=createBrowserRouter([
         {
             path:"/",
