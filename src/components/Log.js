@@ -99,13 +99,13 @@ const Log = ()=>{
                 className="m-2 p-2 w-80 h-14  bg-gray-500 bg-opacity-15 border-gray-500 border-[1px] rounded-md"
                  />
                  <p className="text-red-700 ml-4">{validateErrMessage}</p>
-                <button className=" m-2 bg-red-600 p-2 w-80 h-10 rounded-md "
+                <button className=" m-2 font-bold bg-red-600 p-2 w-80 h-10 rounded-md "
                 onClick={validateOnClick}
                 >
                 {isSignIn?"Sign In" : "Sign Up"}
                 </button>
                 <p 
-                className="text-lg my-4 mx-2 cursor-pointer"
+                className="text-lg font-semibold my-4 mx-2 cursor-pointer"
                 onClick={handleSignButton}> {isSignIn?"New to Netflix? Sign Up now." : "Already registed? Sign In now"} </p>
             </form>
             </div>
